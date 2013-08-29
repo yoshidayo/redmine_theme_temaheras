@@ -1,0 +1,618 @@
+@import url(../../../stylesheets/application.css);
+
+/*
+ * color: #2A5685 -> #0c4d7f;
+ *
+ * color: #444 -> #222;
+ * color: #555 -> #333;
+ * color: #484848 -> #222;
+ * color: #666 -> #484848;
+ * color: #777 -> #484848;
+ * color: #808080 -> #484848;
+ * color: #999 -> #666;
+ *
+ * opacity: 0.4 -> 0.7;
+ *
+ */
+
+body {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif;
+  color: #222;
+}
+
+#main {
+  background-color: #fafcff; /* HSV(216,2,100) */
+}
+
+#header {
+  background-color: #aabbe2; /* HSV(222,25,89) */
+  color: #27314a; /* HSV(223,47,29) */
+  background-image: url(../images/logo_incident-manager.png);
+  background-position: 99% 10%;
+  background-repeat: no-repeat;
+}
+#header a { color: #27314a; }
+
+#quick-search { padding-top: 32px; }
+
+h1, h2, h3, h4 {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
+}
+
+h1 {
+  font-size: 22px
+}
+
+h2, .wiki h1 {
+  font-size: 18px;
+  color: #222;
+}
+
+h3, .wiki h2 {
+  font-size: 14px;
+  color: #222;
+}
+
+h4, .wiki h3 {
+  font-size: 13px;
+  color: #222;
+}
+
+#sidebar h3 {
+  color: #484848
+}
+
+#main-menu li a, #main-menu li a:hover, #main-menu li a:active, #main-menu li a.selected, #main-menu li a.selected:hover {
+  padding: 5px 8px 4px 8px;
+  background-position: 6px 50%;
+  background-repeat: no-repeat;
+  font-size: 11px;
+  font-weight: normal;
+  border-radius: 3px 3px 0px 0px;
+  color: #2c3957; /* HSV(222,49,34) */
+}
+
+#main-menu li a.selected, #main-menu li a.selected:hover {
+  font-weight: bold;
+  color: #222;
+}
+
+#main-menu li a.activity, #main-menu li a.activity:hover {
+  padding-left: 24px;
+  background-image: url(../images/activities.png)
+}
+
+#main-menu li a.roadmap, #main-menu li a.roadmap:hover {
+  padding-left: 24px;
+  background-image: url(../images/package.png)
+}
+
+#main-menu li a.issues, #main-menu li a.issues:hover {
+  padding-left: 24px;
+  background-image: url(../images/ticket.png)
+}
+
+#main-menu li a.new-issue, #main-menu li a.new-issue:hover {
+  padding-left: 24px;
+  background-image: url(../images/ticket_add.png)
+}
+
+#main-menu li a.gantt, #main-menu li a.gantt:hover {
+  padding-left: 24px;
+  background-image: url(../images/gantt.png)
+}
+
+#main-menu li a.calendar, #main-menu li a.calendar:hover {
+  padding-left: 24px;
+  background-image: url(../images/calendar.png)
+}
+
+#main-menu li a.news, #main-menu li a.news:hover {
+  padding-left: 24px;
+  background-image: url(../images/news.png)
+}
+
+#main-menu li a.documents, #main-menu li a.documents:hover {
+  padding-left: 24px;
+  background-image: url(../images/oxygen/document-multiple.png)
+}
+
+#main-menu li a.wiki, #main-menu li a.wiki:hover {
+  padding-left: 24px;
+  background-image: url(../images/oxygen/document-edit.png)
+}
+
+#main-menu li a.files, #main-menu li a.files:hover {
+  padding-left: 24px;
+  background-image: url(../images/oxygen/package-x-generic.png)
+}
+
+#main-menu li a.repository, #main-menu li a.repository:hover {
+  padding-left: 24px;
+  background-image: url(../images/changeset.png)
+}
+
+#main-menu li a.settings, #main-menu li a.settings:hover {
+  padding-left: 24px;
+  background-image: url(../images/project_settings.png);
+}
+
+#main-menu li a.boards, #main-menu li a.boards:hover {
+  padding-left: 24px;
+  background-image: url(../images/Chat.png);
+}
+
+#main-menu li a.importer, #main-menu li a.importer:hover {
+  padding-left: 24px;
+  background-image: url(../images/Paper-arrow.png);
+}
+
+#main-menu li a.work-time, #main-menu li a.work-time:hover {
+  padding-left: 24px;
+  background-image: url(../images/Clock.png);
+}
+
+.pagination {
+  font-size: 100%;
+}
+
+
+/***** Links *****/
+
+a, a:link, a:visited {
+  color: #0c4d7f
+}
+
+a.issue.closed, a.issue.closed:link, a.issue.closed:visited {
+  color: #666
+}
+
+a#toggle-completed-versions {
+  color:#666;
+}
+
+/***** Tables *****/
+
+table.list th {
+  padding: 4px 2px
+}
+
+tr.changeset td.author {
+  text-align: center;
+  width: 15%;
+}
+
+tr.changeset td.committed_on {
+  text-align: center;
+  width: 15%;
+}
+
+/* assinged to me, created by me */
+
+tr.version.closed, tr.version.closed a {
+  color: #666
+}
+
+tr.assigned-to-me td.assigned_to, tr.created-by-me td.author {
+  font-weight: bold;
+  font-size: 11px;
+}
+
+/* overdue */
+
+tr.odd.overdue {
+  background: #ffd8b2
+}
+
+tr.even.overdue {
+  background: #ffe5cc
+}
+
+tr.odd.overdue td, tr.even.overdue td {
+  border-color: #fcc
+}
+
+/* Issues grid styles by priorities (provided by Wynn Netherland) */
+
+/* table.list tr.issue a { color: #484848; } _NO__DOTCOMMA__AFTER__*/
+
+tr.odd.priority-highest, table.list tbody tr.odd.priority-highest:hover {
+  color: #900;
+  font-weight: bold;
+}
+
+tr.odd.priority-highest {
+  background: #ffc4c4
+}
+
+tr.even.priority-highest, table.list tbody tr.even.priority-highest:hover {
+  color: #900;
+  font-weight: bold;
+}
+
+tr.odd.priority-highest td, tr.even.priority-highest td {
+  border-color: #ffb4b4
+}
+
+tr.even.priority-highest {
+  background: #ffd4d4
+}
+
+tr.priority-highest a, tr.priority-highest:hover a {
+  color: #900
+}
+
+tr.odd.priority-high2, table.list tbody tr.odd.priority-high2:hover {
+  color: #900
+}
+
+tr.odd.priority-high2 {
+  background: #ffc4c4
+}
+
+tr.even.priority-high2, table.list tbody tr.even.priority-high2:hover {
+  color: #900
+}
+
+tr.odd.priority-high2 td, tr.even.priority-high2 td {
+  border-color: #ffb4b4
+}
+
+tr.even.priority-high2 {
+  background: #ffd4d4
+}
+
+tr.priority-high2 a {
+  color: #900
+}
+
+tr.odd.priority-high3, table.list tbody tr.odd.priority-high3:hover {
+  color: #900
+}
+
+tr.odd.priority-high3 {
+  background: #fee
+}
+
+tr.even.priority-high3, table.list tbody tr.even.priority-high3:hover {
+  color: #900
+}
+
+tr.odd.priority-high3 td, tr.even.priority-high3 td {
+  border-color: #fcc
+}
+
+tr.even.priority-high3 {
+  background: #fff2f2
+}
+
+tr.priority-high3 a {
+  color: #900
+}
+
+tr.odd.priority-lowest, table.list tbody tr.odd.priority-lowest:hover {
+  color: #559
+}
+
+tr.odd.priority-lowest {
+  background: #eaf7ff
+}
+
+tr.even.priority-lowest, table.list tbody tr.even.priority-lowest:hover {
+  color: #559
+}
+
+tr.odd.priority-lowest td, tr.even.priority-lowest td {
+  border-color: #add7f3
+}
+
+tr.even.priority-lowest {
+  background: #f2faff
+}
+
+tr.priority-lowest a {
+  color: #559
+}
+
+/* �`�P�b�g�ꗗ�ŏI�������`�P�b�g�͎�������t���ŕ\�� */
+tr.closed td.id, tr.closed td.subject {
+  text-decoration: line-through;
+}
+
+#watchers a.delete {
+  opacity: 0.7
+}
+
+.box {
+  color: #222;
+  border-radius: 3px;
+}
+
+.contextual {
+  font-size: 12px
+}
+
+/* submit�{�^���������₷�� */
+input[type="submit"] {
+  font-size: 12px;
+}
+
+/* �e�L�X�g�{�b�N�X�œ����t�H���g���g�p */
+
+input[type="text"] {
+  font-family: "Osaka-Mono", "MS Gothic", sans-serif;
+  font-size: 100%;
+}
+
+textarea.wiki-edit {
+  font-family: "Osaka-Mono", "MS Gothic", sans-serif;
+  letter-spacing: normal;
+  line-height: 130%;
+}
+
+div.issue {
+  background-color: #ffffe6; /* HSV(60,10,100) */
+  border-radius: 3px;
+}
+
+div.issue div.subject p {
+  color: #666
+}
+
+div.issue .next-prev-links {
+  color:#666;
+}
+
+div#issue_tree .contextual a[href*="/issues/new"] {
+    background-image: url("../images/ticket_add.png");
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 2px;
+}
+
+div#relations .contextual a {
+    background-image: url("../images/add.png");
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 2px;
+}
+
+.buttons {
+  font-size: 12px
+}
+
+div#activity dt .time {
+  color: #484848
+}
+
+div#activity dd span.description, #search-results dd span.description {
+  color: #484848
+}
+
+table#time-report tbody tr {
+  color: #484848
+}
+
+form .attributes {
+  margin-bottom: 8px
+}
+
+form .attributes p {
+  padding-top: 1px;
+  padding-bottom: 2px;
+}
+
+form#issue-form small {
+  font-size: 11px;
+}
+
+div.wiki-page .contextual a {
+  opacity: 0.7
+}
+
+ul.projects div.root a.project {
+  font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic"
+}
+
+p.other-formats {
+  font-size: 12px;
+  color: #484848;
+}
+
+/***** Tabs *****/
+
+#content .tabs ul li a {
+  color: #666
+}
+
+#content .tabs ul li a.selected {
+  color: #333
+}
+
+/***** Wiki *****/
+
+div.wiki pre {
+  /* farend_basic: pre�ŉ��X�N���[���o�[��\���������ɐ܂�Ԃ� */;
+  width: 95%;
+  overflow-x: visible;
+  overflow-y: visible;
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  white-space: pre-wrap; /* CSS3 */
+  word-wrap: break-word; /* IE 5.5+ */
+}
+
+div.wiki img {
+  max-width: 98%
+}
+
+/***** My page layout *****/
+.mypage-box {
+  color:#222;
+}
+
+#top-menu {
+  background-color: #2C3957;
+}
+
+#top-menu a {
+    font-weight: normal;
+}
+
+#top-menu #loggedas {
+    color: #ccc;
+    float: right;
+    margin-right: 0.5em;
+}
+
+#top-menu #loggedas a {
+    font-weight: bold;
+}
+
+#top-menu a.home {
+    background-image: url(../images/home.png)
+}
+
+#top-menu a.my-page {
+    background-image: url(../images/user.png)
+}
+
+#top-menu a.projects {
+    background-image: url(../images/projects.png)
+}
+
+#top-menu a.administration {
+    background-image: url(../images/wrench.png)
+}
+
+#top-menu a.help {
+    background-image: url(../images/help.png)
+}
+
+#top-menu a.my-account {
+    background-image: url(../images/user_preferences.png)
+}
+
+#top-menu a.logout {
+    background-image: url(../images/oxygen/media-playback-stop-8.png)
+}
+
+#top-menu a.login {
+    background-image: url(../images/oxygen/media-playback-start-8.png)
+}
+
+#top-menu a.register {
+    background-image: url(../images/user_add.png)
+}
+
+#top-menu a.knowledgebase {
+    background-image: url(../images/Database.png)
+}
+
+#top-menu a.redmine-info {
+    background-image: url(../images/Info.png)
+}
+
+#top-menu a.home, #top-menu a.my-page,
+#top-menu a.projects, #top-menu a.administration,
+#top-menu a.help, #top-menu a.my-account,
+#top-menu a.logout, #top-menu a.login,
+#top-menu a.register, #top-menu a.knowledgebase,
+#top-menu a.redmine-info {
+    background-position: 0% 40%;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+a.atom {
+    background: url(../images/oxygen/application-rss%2Bxml.png) no-repeat 0px 0px;
+    padding: 0px 0px 0px 18px;
+}
+
+a.csv {
+    background: url(../images/oxygen/text-csv.png) no-repeat 0px 0px;
+    padding: 0px 0px 0px 18px;
+}
+
+a.txt {
+    background: url(../images/oxygen/text-plain.png) no-repeat 0px 0px;
+    padding: 0px 0px 0px 18px;
+}
+
+a.html {
+    background: url(../images/oxygen/text-html.png) no-repeat 0px 0px;
+    padding: 0px 0px 0px 18px;
+}
+
+a.pdf {
+    background: url(../images/oxygen/application-pdf.png) no-repeat 0px 0px;;
+    padding: 0px 0px 0px 18px;
+}
+
+a.png {
+    background: url(../images/oxygen/image-x-generic.png) no-repeat 0px 0px;
+    padding: 0px 0px 0px 18px;
+}
+
+#login-form table {
+    border-radius: 6px;
+    background-color: #ffefcc; /* HSV(41,20,100) */
+}
+
+/***** contextual menu *****/
+div.contextual a[href$="/issues"], a[href$="/time_entries"], a[href$="/activity"] {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 2px;
+}
+
+div.contextual a[href$="/issues"] {
+    background-image: url("../images/ticket.png");
+}
+
+div.contextual a[href$="/time_entries"] {
+    background-image: url("../images/time.png");
+}
+
+div.contextual a[href$="/activity"] {
+    background-image: url("../images/activities.png");
+}
+
+/***** flash *****/
+div.flash, .nodata, .warning {
+  border-radius: 3px;
+}
+
+div.attributes[id="attributes"] {
+  border: 1px 0 0 0 0 solid #f00;
+}
+
+/***** calendar *****/
+table.cal div.closed {
+  text-decoration: line-through;
+}
+
+table.cal div.overdue {
+  background: #ffe5cc
+}
+
+table.cal div.assigned-to-me a {
+  font-weight: bold;
+}
+
+/***** attachments *****/
+#content .wiki-page + .attachments {
+  border-top: 1px dashed #ccc;
+}
+
+/* http://www.redmine.org/issues/11825 */
+html>body .tabular p {overflow:visible;}
