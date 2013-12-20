@@ -137,11 +137,6 @@ h4, .wiki h3 {
   background-image: url(../images/project_settings.png);
 }
 
-#main-menu li a.boards, #main-menu li a.boards:hover {
-  padding-left: 24px;
-  background-image: url(../images/Chat.png);
-}
-
 #main-menu li a.importer, #main-menu li a.importer:hover {
   padding-left: 24px;
   background-image: url(../images/Paper-arrow.png);
