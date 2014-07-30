@@ -25,15 +25,14 @@ body {
 }
 
 #header {
-  background-color: #aabbe2; /* HSV(222,25,89) */
+  text-align: left;
+  min-height: 72px;
+  background-color: #dfe6f5;
   color: #27314a; /* HSV(223,47,29) */
-  background-image: url(../images/logo_incident-manager.png);
-  background-position: 99% 10%;
-  background-repeat: no-repeat;
 }
 #header a { color: #27314a; }
 
-#quick-search { padding-top: 32px; }
+#quick-search { padding-top: 43px; }
 
 h1, h2, h3, h4 {
   font-family: Meiryo, "Hiragino Kaku Gothic Pro", "MS PGothic", Verdana, sans-serif
@@ -557,9 +556,17 @@ a.png {
 }
 
 #login-form table {
+    height:143px;
     border-radius: 6px;
-    background-color: #ffefcc; /* HSV(41,20,100) */
+    border: 2px solid #27314a;
+    background-color:#dfe6f5;
+    background-image: url(../images/temaheras_logo2.png);
+    background-position: 17px 50%;
+    background-repeat: no-repeat;
+    padding: 0 0 0 157px
 }
+#login-form table td { padding: 6px }
+#login-form input#username, #login-form input#password { width: 200px; height: 17px; padding: 0 0 0 3px }
 
 /***** contextual menu *****/
 div.contextual a[href$="/issues"], a[href$="/time_entries"], a[href$="/activity"] {
@@ -611,3 +618,12 @@ table.cal div.assigned-to-me a {
 
 /* http://www.redmine.org/issues/11825 */
 html>body .tabular p {overflow:visible;}
+
+/* history */
+div#history .journal:nth-child(odd) {
+  background-color: #F5F5F5;
+}
+
+div#history .journal {
+  padding-left: 10px;
+}
